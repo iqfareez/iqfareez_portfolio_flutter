@@ -5,10 +5,7 @@ import 'package:iqfareez_portfolio/CONSTANTS.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+  MyHomePage({Key key}) : super(key: key);
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -24,6 +21,27 @@ class _MyHomePageState extends State<MyHomePage> {
             ShortIntro(),
             Services(),
             CopyrightFooter(),
+            Container(
+              child: Row(
+                children: [
+                  RawMaterialButton(
+                    //TODO: Sambung sini
+                    onPressed: () {
+                      // _launchURL(urlLink);
+                    },
+                    elevation: 2.0,
+                    fillColor: Color(0xFF1D809F),
+                    child: FaIcon(
+                      FontAwesomeIcons.linkedinIn,
+                      semanticLabel: 'LinkedIn',
+                      size: 25.0,
+                    ),
+                    padding: EdgeInsets.all(20.0),
+                    shape: CircleBorder(),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
@@ -39,8 +57,21 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment.center,
+            radius: 2.34,
+            colors: [
+              Color(0xFFF2C94C),
+              Color(0xFFF2994A),
+            ],
+            stops: [
+              0,
+              1,
+            ],
+          ),
+          backgroundBlendMode: BlendMode.srcOver),
       height: MediaQuery.of(context).size.height * (3 / 4),
-      color: Color(0xFFDFAC05),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,

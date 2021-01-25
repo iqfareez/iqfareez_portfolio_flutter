@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.yellow,
           textTheme: GoogleFonts.sourceSansProTextTheme()),
-      home: MyHomePage(title: 'iqfareez'),
+      home: MyHomePage(),
     );
   }
 }
