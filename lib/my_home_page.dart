@@ -20,28 +20,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Home(),
             ShortIntro(),
             Services(),
+            Contact(),
             CopyrightFooter(),
-            Container(
-              child: Row(
-                children: [
-                  RawMaterialButton(
-                    //TODO: Sambung sini
-                    onPressed: () {
-                      // _launchURL(urlLink);
-                    },
-                    elevation: 2.0,
-                    fillColor: Color(0xFF1D809F),
-                    child: FaIcon(
-                      FontAwesomeIcons.linkedinIn,
-                      semanticLabel: 'LinkedIn',
-                      size: 25.0,
-                    ),
-                    padding: EdgeInsets.all(20.0),
-                    shape: CircleBorder(),
-                  )
-                ],
-              ),
-            )
           ],
         ),
       ),
@@ -136,7 +116,7 @@ class Services extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 90.0),
-      color: Color(0xFF1D809F),
+      color: kColourTeal,
       child: Column(
         children: [
           SizedBox(
@@ -185,24 +165,85 @@ class Services extends StatelessWidget {
           child: FaIcon(
             icon,
             semanticLabel: title,
-            size: 35.0,
+            size: 25.0,
+            color: kColourTeal,
           ),
           padding: EdgeInsets.all(30.0),
           shape: CircleBorder(),
         ),
-        SizedBox(height: 5),
+        SizedBox(height: 8),
         Text(
           title,
           style: TextStyle(
               fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24.0),
         ),
-        SizedBox(height: 5),
+        SizedBox(height: 8),
         Text(
           description,
           style: TextStyle(
               fontWeight: FontWeight.w100, color: Colors.white, fontSize: 16.0),
         )
       ],
+    );
+  }
+}
+
+class Contact extends StatelessWidget {
+  const Contact({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 32.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          buildContactButton(
+              name: 'LinkedIn',
+              icon: FontAwesomeIcons.linkedinIn,
+              url: kLinkedInUrl),
+          buildContactButton(
+              name: 'Twitter',
+              url: kTwitterUrl,
+              icon: FontAwesomeIcons.twitter),
+          buildContactButton(
+              name: 'Instagram',
+              url: kInstagramUrl,
+              icon: FontAwesomeIcons.instagram),
+          buildContactButton(
+              name: 'Email',
+              url: kEmailAddress,
+              icon: FontAwesomeIcons.envelope),
+        ],
+      ),
+    );
+  }
+
+  Padding buildContactButton(
+      {@required String name, @required String url, @required IconData icon}) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Tooltip(
+        message: name,
+        child: RawMaterialButton(
+          onPressed: () {
+            _launchURL(url);
+          },
+          elevation: 2.0,
+          fillColor: kColourTeal,
+          child: FaIcon(
+            icon,
+            semanticLabel: name,
+            color: Colors.white,
+            size: 20.0,
+          ),
+          padding: EdgeInsets.all(20.0),
+          shape: CircleBorder(),
+        ),
+      ),
     );
   }
 }
@@ -215,6 +256,7 @@ class CopyrightFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(14.0),
       child: Text(
         'Copyright © Fareez Iqmal 2021',
         textAlign: TextAlign.center,
