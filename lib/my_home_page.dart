@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:iqfareez_portfolio/CONSTANTS.dart';
+import 'CONSTANTS.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,15 +14,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Home(),
-            ShortIntro(),
-            Services(),
-            Contact(),
-            CopyrightFooter(),
-          ],
+      body: Scrollbar(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Home(),
+              ShortIntro(),
+              Services(),
+              Contact(),
+              CopyrightFooter(),
+            ],
+          ),
         ),
       ),
     );
@@ -56,12 +58,12 @@ class Home extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          SelectableText(
             'Fareez Iqmal',
             textAlign: TextAlign.center,
             style: TextStyle(fontWeight: FontWeight.w900, fontSize: 88),
           ),
-          Text(
+          SelectableText(
             'Engineering student | IIUM',
             textAlign: TextAlign.center,
             style: TextStyle(fontStyle: FontStyle.italic, fontSize: 28),
@@ -83,7 +85,7 @@ class ShortIntro extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 115.0),
       child: Column(
         children: [
-          Text(
+          SelectableText(
             '21 years old boi & interested in you',
             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
           ),
@@ -122,7 +124,7 @@ class Services extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(
+          SelectableText(
             'Visit my work at',
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 48),
@@ -172,13 +174,13 @@ class Services extends StatelessWidget {
           shape: CircleBorder(),
         ),
         SizedBox(height: 8),
-        Text(
+        SelectableText(
           title,
           style: TextStyle(
               fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24.0),
         ),
         SizedBox(height: 8),
-        Text(
+        SelectableText(
           description,
           style: TextStyle(
               fontWeight: FontWeight.w100, color: Colors.white, fontSize: 16.0),
@@ -257,7 +259,7 @@ class CopyrightFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(14.0),
-      child: Text(
+      child: SelectableText(
         'Copyright © Fareez Iqmal 2021',
         textAlign: TextAlign.center,
       ),
