@@ -5,7 +5,7 @@ import 'CONSTANTS.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class Home extends StatelessWidget {
   const Home({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -76,7 +76,7 @@ class Home extends StatelessWidget {
 
 class ShortIntro extends StatelessWidget {
   const ShortIntro({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -111,7 +111,7 @@ class ShortIntro extends StatelessWidget {
 
 class Services extends StatelessWidget {
   const Services({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -152,10 +152,10 @@ class Services extends StatelessWidget {
   }
 
   Column buildServicesIcon(
-      {@required String title,
-      @required String description,
-      @required IconData icon,
-      @required String urlLink}) {
+      {required String title,
+      required String description,
+      required IconData icon,
+      required String urlLink}) {
     return Column(
       children: [
         RawMaterialButton(
@@ -192,7 +192,7 @@ class Services extends StatelessWidget {
 
 class Contact extends StatelessWidget {
   const Contact({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -225,7 +225,7 @@ class Contact extends StatelessWidget {
   }
 
   Padding buildContactButton(
-      {@required String name, @required String url, @required IconData icon}) {
+      {required String name, required String url, required IconData icon}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Tooltip(
@@ -252,7 +252,7 @@ class Contact extends StatelessWidget {
 
 class CopyrightFooter extends StatelessWidget {
   const CopyrightFooter({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
