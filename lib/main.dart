@@ -10,8 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Iqfareez\'s Portfolio',
       theme: ThemeData(
-          primarySwatch: Colors.teal,
-          textTheme: GoogleFonts.sourceSansProTextTheme()),
+        primarySwatch: Colors.teal,
+        fontFamily: GoogleFonts.sourceSansPro().fontFamily,
+      ),
       home: MyHomePage(),
     );
   }
