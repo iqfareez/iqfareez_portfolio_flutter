@@ -10,7 +10,7 @@ const kPlayStoreDevPage =
 
 //Contacts
 const kInstagramUrl = 'https://www.instagram.com/iqfareez/';
-const kLinkedInUrl = 'https://www.linkedin.com/in/muhammad-iqfareez/';
+const kLinkedInUrl = 'https://www.linkedin.com/in/iqfareez/';
 const kTwitterUrl = 'https://twitter.com/iqfareez';
 const kEmailAddress = 'mailto:foxtrotiqmal3@gmail.com';
 
